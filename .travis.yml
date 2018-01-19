@@ -1,9 +1,12 @@
 language: cpp
 
-dist: xenial
+dist: Xenial
 
 compiler:
   - gcc
+
+os:
+  - linux
 
 before_install:
 
