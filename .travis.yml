@@ -1,9 +1,9 @@
 language: cpp
 
-# dist: xenial
+dist: xenial
 sudo: required
-services:
-  - docker
+#services:
+#  - docker
 
 compiler:
   - gcc
