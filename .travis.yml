@@ -1,6 +1,6 @@
 language: cpp
 
-dist: xenial
+dist: Xenial
 sudo: required
 #services:
 #  - docker
