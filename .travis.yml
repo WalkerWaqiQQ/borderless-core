@@ -1,0 +1,17 @@
+language: cpp
+
+dist: xenial
+
+compiler:
+  - gcc
+
+before_install:
+
+  - sudo apt-get update
+  - sudo apt-get install cmake make libbz2-dev libdb++-dev libdb-dev libssl-dev openssl libreadline-dev autoconf libtool git ntp libcurl4-openssl-dev g++
+  - sudo apt-get install libboost-all-dev
+
+install:
+
+script: 
+  - cmake . && make -j8
