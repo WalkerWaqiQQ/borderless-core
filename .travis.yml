@@ -1,6 +1,9 @@
 language: cpp
 
-dist: Trusty
+dist: xenial
+sudo: required
+services:
+  - docker
 
 compiler:
   - gcc
@@ -15,15 +18,9 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install cmake make libbz2-dev libdb++-dev libdb-dev libssl-dev openssl libreadline-dev autoconf libtool git ntp libcurl4-openssl-dev g++
   - sudo apt-get install autotools-dev build-essential libbz2-dev libicu-dev python-dev
+  - sudo apt-get install libboost-all-dev
 
-install:
-  - BOOST_ROOT=./boost
-  - wget -c 'http://sourceforge.net/projects/boost/files/boost/1.57.0/boost_1_57_0.tar.bz2/download' -O boost_1_57_0.tar.bz2
-  - tar xjf boost_1_57_0.tar.bz2
-  - cd boost_1_57_0/
-  - ./bootstrap.sh "--prefix=$BOOST_ROOT"
-  - ./b2 install
-  - cd ..
+install: true
 
 script:
   - cmake -DBOOST_ROOT="$BOOST_ROOT" -DCMAKE_BUILD_TYPE=Release . && make
