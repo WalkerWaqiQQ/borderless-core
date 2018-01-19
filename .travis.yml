@@ -1,6 +1,6 @@
 language: cpp
 
-dist: Xenial
+dist: trusty
 
 compiler:
   - gcc
